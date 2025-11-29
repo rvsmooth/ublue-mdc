@@ -29,6 +29,5 @@ dnf5 install --nogpgcheck --enable-repo="vscode" -y \
 systemctl enable podman.socket
 
 #disable autoupdates
-systemctl disable uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service 
-systemctl stop uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service
+systemctl disable uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service
 

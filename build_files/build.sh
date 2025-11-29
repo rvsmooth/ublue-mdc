@@ -27,3 +27,8 @@ dnf5 install --nogpgcheck --enable-repo="vscode" -y \
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+#disable autoupdates
+systemctl disable uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service 
+systemctl stop uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service
+

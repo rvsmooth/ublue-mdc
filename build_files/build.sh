@@ -18,16 +18,22 @@ dnf5 install -y tmux neovim
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+
 # Install VSCode
 dnf5 config-manager addrepo --set=baseurl="https://packages.microsoft.com/yumrepos/vscode" --id="vscode"
 dnf5 config-manager setopt vscode.enabled=0
 dnf5 config-manager setopt vscode.gpgcheck=0
 dnf5 install --nogpgcheck --enable-repo="vscode" -y \
   code
-#### Example for enabling a System Unit File
 
+# Install firefox and ublock-origin
+dnf5 install -y firefox mozilla-ublock-origin
+
+# Install libreoffice
+dnf5 install -y libreoffice
+
+#### Example for enabling a System Unit File
 systemctl enable podman.socket
 
-#disable autoupdates
+# disable autoupdates
 systemctl disable uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service
-

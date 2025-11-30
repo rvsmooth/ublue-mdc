@@ -36,4 +36,6 @@ dnf5 install -y libreoffice
 systemctl enable podman.socket
 
 # disable autoupdates
-systemctl disable uupd.timer uupd.service rpm-ostreed-automatic.timer rpm-ostreed-automatic.service
+systemctl disable uupd.timer uupd.service \
+  rpm-ostreed-automatic.timer rpm-ostreed-automatic.service \
+  flatpak-preinstall.service kwalletd5

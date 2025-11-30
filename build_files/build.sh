@@ -32,6 +32,9 @@ dnf5 install -y firefox mozilla-ublock-origin
 # Install libreoffice
 dnf5 install -y libreoffice
 
+# Install c++ compiler
+dnf install -y gcc-c++
+
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
 

@@ -102,5 +102,5 @@ jobs:
       - name: Upload to pixeldrain
         run: |
           set -x
-          echo "timestamp=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
-          curl -T "${{ steps.build.outputs.output-directory }}/bootiso/install.iso" -u :"${{ secrets.PD_API }}" https://pixeldrain.com/api/file/ublue-mdc-$timestamp.iso
+          HASH=$(git rev-parse --short=7 HEAD)
+          curl -T "${{ steps.build.outputs.output-directory }}/bootiso/install.iso" -u :"${{ secrets.PD_API }}" https://pixeldrain.com/api/file/ublue-mdc-${HASH}.iso

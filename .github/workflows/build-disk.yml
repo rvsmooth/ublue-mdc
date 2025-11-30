@@ -98,6 +98,11 @@ jobs:
           compression-level: 0
           overwrite: true
 
+      - name: Upload to pixeldrain
+        run: |
+          set -x
+          curl -T "${{ steps.build.outputs.output-directory }}/bootiso/install.iso" -u :"${{ secrets.PD_API }}" https://pixeldrain.com/api/file
+
       - name: Upload to S3
         if: inputs.upload-to-s3 == true && github.event_name != 'pull_request'
         shell: bash
@@ -113,4 +118,3 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rclone
           rclone copy $SOURCE_DIR S3:${{ secrets.S3_BUCKET_NAME }}
-

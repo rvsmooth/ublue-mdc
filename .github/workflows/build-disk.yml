@@ -101,7 +101,7 @@ jobs:
       - name: Upload to pixeldrain
         run: |
           set -x
-          curl -T "${{ steps.build.outputs.output-directory }}/bootiso/install.iso" -u :"${{ secrets.PD_API }}" https://pixeldrain.com/api/file
+          curl -T "${{ steps.build.outputs.output-directory }}/bootiso/install.iso" -u :"${{ secrets.PD_API }}" https://pixeldrain.com/api/file/ublue-mdc.iso
 
       - name: Upload to S3
         if: inputs.upload-to-s3 == true && github.event_name != 'pull_request'

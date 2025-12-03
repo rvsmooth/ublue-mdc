@@ -44,3 +44,4 @@ echo 'starship init fish | source' | sudo tee -a /etc/fish/config.fish
 
 ### Run scripts
 /ctx/build_files/00-branding.sh
+/ctx/build_files/01-nerdfonts.sh

@@ -29,5 +29,8 @@ PACKAGES=(
 
 dnf5 install -y "${PACKAGES[@]}"
 
-#### Example for enabling a System Unit File
-systemctl enable podman.socket
+### Copy files to system
+rsync -rvKl /ctx/system_files/ /
+
+### Run scripts
+/ctx/build_files/00-branding.sh

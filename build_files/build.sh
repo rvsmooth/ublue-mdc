@@ -12,7 +12,6 @@ dnf5 install --nogpgcheck --enable-repo="vscode" -y \
 
 # Install other packages
 PACKAGES=(
-  cargo
   clang
   fastfetch
   firefox
@@ -22,8 +21,6 @@ PACKAGES=(
   libreoffice
   mozilla-ublock-origin
   neovim
-  rust
-  rustup
   tmux
 )
 
